@@ -18,7 +18,7 @@ class Twig
 		 
 		ini_set('include_path',
 		ini_get('include_path') . PATH_SEPARATOR . APPPATH . 'libraries/Twig');
-		require_once (string) "Autoloader" . EXT;
+		require_once (string) "Autoloader.php";
 
 		log_message('debug', "Twig Autoloader Loaded");
 
