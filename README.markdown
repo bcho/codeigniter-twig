@@ -1,8 +1,8 @@
-# Twig library for CodeIgniter 2.x
+# Twig library for CodeIgniter 2.x and 3.x using Composer
 
 ## Installation
 
-First, Create twig cache directory under application/cache; and
+First, create twig cache directory under application/cache; and
 give it write permission
 	
     $ mkdir -p application/cache/twig
@@ -10,26 +10,15 @@ give it write permission
 
 Add the Twig config file to application/config/twig.php
 
-Download the [Twig library](http://twig.sensiolabs.org/). Extract the it into application/libraries. The directories should look like this
+Use the [composer](http://getcomposer.org) to install the latest Twig.
 
-    application/libraries/Twig
-    |-- Error
-    |-- Extension
-    |-- Filter
-    |-- Function
-    |-- Loader
-    |-- Node
-    |   `-- Expression
-    |       |-- Binary
-    |       `-- Unary
-    |-- NodeVisitor
-    |-- Sandbox
-    |-- Test
-    `-- TokenParser
+Set the composer vendor path in the Twig libraries file:
+
+    require_once (COMPOSER_VENDORPATH . 'autoload.php');
 
 ## Usage
 
-Put in your controller,
+Put in your controller:
 
     $this->load->library('twig');
     $data['title'] = "Testing Twig!!";

@@ -15,10 +15,8 @@ class Twig
 	{
 		$this->CI =& get_instance();
 		$this->CI->config->load('twig');
-		 
-		ini_set('include_path',
-		ini_get('include_path') . PATH_SEPARATOR . APPPATH . 'libraries/Twig');
-		require_once (string) "Autoloader.php";
+
+                require_once (COMPOSER_VENDORPATH . 'autoload.php');
 
 		log_message('debug', "Twig Autoloader Loaded");
 
@@ -30,8 +28,8 @@ class Twig
 		$loader = new Twig_Loader_Filesystem($this->_template_dir);
 
 		$this->_twig = new Twig_Environment($loader, array(
-                'cache' => $this->_cache_dir,
-                'debug' => $debug,
+                    'cache' => $this->_cache_dir,
+                    'debug' => $debug,
 		));
 		
 	        foreach(get_defined_functions() as $functions) {
